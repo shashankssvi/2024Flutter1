@@ -1,3 +1,4 @@
+import 'package:app1/screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -35,14 +36,42 @@ class _AudioplayState extends State<Audioplay> {
           child: Text("cat"),
         ),
       ),
-      body: Align(
-        alignment:Alignment.center,
-        child: InkWell(
-          child: Image.asset("assets/cat.jpg"),
-          onTap: () async{
-            await playaudio();
-          },
-        ),
+      body: ListView(
+        children: [
+          Align(
+            alignment:Alignment.center,
+            child: InkWell(
+              child: Image.asset("assets/cat.jpg"),
+              onTap: () async{
+                await playaudio();
+              },
+            ),
+          ),
+          Align(
+            alignment:Alignment.center,
+            child: InkWell(
+              child: Image.asset("assets/cat.jpg"),
+              onTap: () async{
+                await playaudio();
+              },
+            ),
+          ),
+          Align(
+            alignment:Alignment.center,
+            child: InkWell(
+              child: Image.asset("assets/cat.jpg"),
+              onTap: () async{
+                await playaudio();
+              },
+            ),
+          ),
+          ElevatedButton(
+            onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+            },
+            child: Text("Next",style: TextStyle(color: Colors.blue),),
+          ),
+        ],
       ),
     );
   }
