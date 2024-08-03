@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 void main(){
-  runApp(Screen1());
+  runApp(const Screen1());
 }
 
 class Screen1 extends StatelessWidget {
   const Screen1({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Audioplay(),
     );
@@ -28,11 +28,12 @@ class _AudioplayState extends State<Audioplay> {
   playaudio()async{
     await audio.play(AssetSource("cat1.mp3"));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Center(
+        title:const Center(
           child: Text("cat"),
         ),
       ),
@@ -67,9 +68,9 @@ class _AudioplayState extends State<Audioplay> {
           ),
           ElevatedButton(
             onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Screen2()));
             },
-            child: Text("Next",style: TextStyle(color: Colors.blue),),
+            child: const Text("Next",style: TextStyle(color: Colors.blue),),
           ),
         ],
       ),
